@@ -1,0 +1,23 @@
+{
+  "name": "bot-discord-rabelin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adrian-Rabelo/bot-discord-rabelin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adrian-Rabelo/bot-discord-rabelin/issues"
+  },
+  "homepage": "https://github.com/Adrian-Rabelo/bot-discord-rabelin#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
