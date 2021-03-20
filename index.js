@@ -4,12 +4,13 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const command = require("./command");
 
+const firstMessage = require("./first-message");
+const privateMessage = require("./private-message");
+
 client.on("ready", () => {
 	console.log("Tô pronto");
 
-	command(client, ["ping", "test"], (message) => {
-		message.channel.send("Pong!");
-	});
+	firstMessage(client, "822949568869040219", "Olá Mundo!!!", ["😎", "🤙"]);
 
 	command(client, "server", (message) => {
 		client.guilds.cache.forEach((guild) => {
@@ -36,6 +37,33 @@ client.on("ready", () => {
 			},
 		});
 	});
+
+	command(client, "criartexto", (message) => {
+		const name = message.content.replace("!createtextchannel", "");
+		message.guild.channels
+			.create(name, {
+				type: "text",
+			})
+			.then((channel) => {
+				const categoryId = "822955129913212929";
+				channel.setParent(categoryId);
+			});
+	});
+
+	command(client, "criarvoz", (message) => {
+		const name = message.content.replace("!criarvoz", "");
+		message.guild.channels
+			.create(name, {
+				type: "voice",
+			})
+			.then((channel) => {
+				const categoryId = "822955129913212929";
+				channel.setParent(categoryId);
+				channel.setUserLimit(10);
+			});
+	});
+
+	// privateMessage(client, "ping", "Pong!");
 });
 
 client.login(config.token);
