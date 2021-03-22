@@ -23,7 +23,14 @@ for (const file of commandFiles) {
 client.on("ready", () => {
 	console.log("Tô pronto");
 
-	// mute(client);
+	// command(client, "teste", (message) => {
+	// 	const content = message.content.replace("!teste", "").trim();
+	// 	if (message.member.hasPermission("ADMINISTRATOR")) {
+	// 		mutedRole = message.guild.roles.cache.find(
+	// 			(role) => role.name === content
+	// 		);
+	// 	}
+	// });
 
 	command(client, "server", (message) => {
 		var server = message.guild;
@@ -139,6 +146,12 @@ client.on("message", (message) => {
 		client.commands.get("mute").execute(message, args);
 	} else if (command === "unmute") {
 		client.commands.get("unmute").execute(message, args);
+	} else if (command === "sucumbir") {
+		client.commands.get("sucumbir").execute(message, args);
+	} else if (command === "perdoar") {
+		client.commands.get("perdoar").execute(message, args);
+	} else if (command == "help") {
+		client.commands.get("help").execute(message, args);
 	}
 });
 

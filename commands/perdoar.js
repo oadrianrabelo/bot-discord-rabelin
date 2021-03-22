@@ -1,6 +1,6 @@
 module.exports = {
-	name: "mute",
-	description: "mutar os palhaços",
+	name: "perdoar",
+	description: "perdoar os palhaços",
 	execute(message, args) {
 		const target = message.mentions.users.first();
 		if (target) {
@@ -8,15 +8,15 @@ module.exports = {
 				(role) => role.name === "cargo geral"
 			);
 			let muteRole = message.guild.roles.cache.find(
-				(role) => role.name === "mutado"
+				(role) => role.name === "quase ban"
 			);
 
 			let memberTarget = message.guild.members.cache.get(target.id);
 
-			memberTarget.roles.remove(mainRole.id);
-			memberTarget.roles.add(muteRole.id);
+			memberTarget.roles.remove(muteRole.id);
+			memberTarget.roles.add(mainRole.id);
 
-			message.channel.send(`<@${memberTarget.user.id}> tomou mute`);
+			message.channel.send(`<@${memberTarget.user.id}> foi perdoado`);
 		} else {
 			message.channel.send("Achei esse maluco n");
 		}
