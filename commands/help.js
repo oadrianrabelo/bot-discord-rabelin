@@ -4,7 +4,7 @@ module.exports = {
 	description: "ajudar os necessitados",
 	execute(message, args) {
 		const logo =
-			"https://cdn.discordapp.com/avatars/231096509607837696/c4939972cb7899407e0ed07d2c75947d.png?size=256";
+			"https://cdn.discordapp.com/avatars/822620300608274482/20c3c0644c9100ee7837c4d79b8251ec.png?size=256";
 		message.reply("rlx que o pai ajuda");
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Ajudinha")
