@@ -143,8 +143,8 @@ client.on("message", (message) => {
             .split(/ +/);
         const command = args.shift().toLowerCase();
 
-        if (command === "clear") {
-            client.commands.get("clear").execute(message, args);
+        if (command === "operacao") {
+            client.commands.get("operacao").execute(message, args);
         } else if (command === "play") {
             client.commands.get("play").execute(message, args);
         } else if (command === "leave") {
