@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const config = require("./config.json");
 const command = require("./command");
 
 const firstMessage = require("./first-message");
@@ -108,7 +107,9 @@ tem um total de ${server.memberCount} cabeças de pika`);
     });
 
     command(client, "ping", (message) => {
-        const args = message.content.slice(config.prefix.length).split(/ +/);
+        const args = message.content
+            .slice(process.env.TOKEN.length)
+            .split(/ +/);
         client.commands.get("ping").execute(message, client);
         // 	message.channel.send(
         // 		`Teu ping é ${
@@ -131,10 +132,15 @@ tem um total de ${server.memberCount} cabeças de pika`);
 
 client.on("message", (message) => {
     try {
-        if (!message.content.startsWith(config.prefix) || message.author.bot)
+        if (
+            !message.content.startsWith(process.env.PREFIX) ||
+            message.author.bot
+        )
             return;
 
-        const args = message.content.slice(config.prefix.length).split(/ +/);
+        const args = message.content
+            .slice(process.env.PREFIX.length)
+            .split(/ +/);
         const command = args.shift().toLowerCase();
 
         if (command === "clear") {
@@ -159,4 +165,4 @@ client.on("message", (message) => {
     }
 });
 
-client.login(config.token);
+client.login(process.env.CLIENT_TOKEN);
