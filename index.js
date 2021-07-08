@@ -22,67 +22,6 @@ for (const file of commandFiles) {
 client.on("ready", () => {
     console.log("Tô pronto");
 
-    // command(client, "teste", (message) => {
-    // 	const content = message.content.replace("!teste", "").trim();
-    // 	if (message.member.hasPermission("ADMINISTRATOR")) {
-    // 		mutedRole = message.guild.roles.cache.find(
-    // 			(role) => role.name === content
-    // 		);
-    // 	}
-    // });
-
-    command(client, "server", (message) => {
-        var server = message.guild;
-        message.channel.send(`Nome do servidor: 
-        ${server.name}
-tem um total de ${server.memberCount} cabeças de pika`);
-    });
-
-    // command(client, ["cc", "clearchannel"], (message) => {
-    // 	if (message.member.hasPermission("ADMINISTRATOR")) {
-    // 		message.channel.messages.fetch().then((results) => {
-    // 			message.channel.bulkDelete(results);
-    // 		});
-    // 	}
-    // });
-
-    command(client, "status", (message) => {
-        const content = message.content.replace("!status", "");
-        // if (message.member.hasPermission("ADMINISTRATOR")) {
-        client.user.setPresence({
-            activity: {
-                name: content,
-                type: 0,
-            },
-        });
-        // }
-    });
-
-    // command(client, "criartexto", (message) => {
-    // 	const name = message.content.replace("!createtextchannel", "");
-    // 	message.guild.channels
-    // 		.create(name, {
-    // 			type: "text",
-    // 		})
-    // 		.then((channel) => {
-    // 			const categoryId = "822955129913212929";
-    // 			channel.setParent(categoryId);
-    // 		});
-    // });
-
-    // command(client, "criarvoz", (message) => {
-    // 	const name = message.content.replace("!criarvoz", "");
-    // 	message.guild.channels
-    // 		.create(name, {
-    // 			type: "voice",
-    // 		})
-    // 		.then((channel) => {
-    // 			const categoryId = "822955129913212929";
-    // 			channel.setParent(categoryId);
-    // 			channel.setUserLimit(10);
-    // 		});
-    // });
-
     command(client, "embed", (message) => {
         const logo = "https://imgur.com/gallery/dutQtZ8";
 
@@ -105,29 +44,6 @@ tem um total de ${server.memberCount} cabeças de pika`);
 
         message.channel.send(embed);
     });
-
-    command(client, "ping", (message) => {
-        const args = message.content
-            .slice(process.env.TOKEN.length)
-            .split(/ +/);
-        client.commands.get("ping").execute(message, client);
-        // 	message.channel.send(
-        // 		`Teu ping é ${
-        // 			message.createdTimestamp - Date.now()
-        // 		}ms\nLatência da API ${Math.round(client.ws.ping)}ms`
-        // 	);
-    });
-
-    command(client, "serverinfo", (message) => {
-        message.channel.send("Ta vino");
-    });
-
-    command(client, "tts", async (message) => {
-        const args = message.content.replace("!tts", "");
-        client.commands.get("tts").execute(message, args, client);
-    });
-
-    // privateMessage(client, "ping", "Pong!");
 });
 
 client.on("message", (message) => {
@@ -159,6 +75,14 @@ client.on("message", (message) => {
             client.commands.get("perdoar").execute(message, args);
         } else if (command === "help") {
             client.commands.get("help").execute(message, args);
+        } else if (command === "ping") {
+            client.commands.get("ping").execute(message);
+        } else if (command === "tts") {
+            client.commands.get("tts").execute(message, args, client);
+        } else if (command === "serverinfo") {
+            client.commands.get("serverinfo").execute(message, args);
+        } else if (command === "status") {
+            client.commands.get("status").execute(message, args, client);
         }
     } catch (error) {
         console.log(error);
