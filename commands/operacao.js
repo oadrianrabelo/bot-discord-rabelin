@@ -33,6 +33,7 @@ module.exports = {
             .setFooter("BotRabelin", logo)
             .setColor("#EB459E");
         try {
+            console.log(args);
             if (!args) return message.reply("coloque argumentos");
             const operacoes = ["+", "*", "/", "-"];
             const operacao = {
