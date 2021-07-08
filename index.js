@@ -157,7 +157,7 @@ client.on("message", (message) => {
             client.commands.get("sucumbir").execute(message, args);
         } else if (command === "perdoar") {
             client.commands.get("perdoar").execute(message, args);
-        } else if (command == "help") {
+        } else if (command === "help") {
             client.commands.get("help").execute(message, args);
         }
     } catch (error) {

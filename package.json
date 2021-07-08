@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "servidor": "nodemon index-local.js"
+        "servidor": "nodemon index.js",
+        "local": "nodemon index-local.js"
     },
     "repository": {
         "type": "git",
