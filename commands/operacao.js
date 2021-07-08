@@ -79,6 +79,7 @@ module.exports = {
                     break;
 
                 default:
+                    return message.reply("Esta não é uma operação válida");
                     break;
             }
         } catch (error) {
