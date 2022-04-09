@@ -3,7 +3,7 @@ module.exports = {
     description: "this is a ping command",
     execute(message) {
         message.channel.send(
-            `Teu ping é ${message.createdTimestamp - Date.now()}ms`,
+            `Seu ping é ${message.createdTimestamp - Date.now()}ms`,
         );
     },
 };

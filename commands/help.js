@@ -60,7 +60,12 @@ module.exports = {
           name: prefixo + "perdoar <@usuario>",
           value: "Perdoa um usuário do sucumbimento",
           inline: false,
-        }
+        },
+        {
+          name: prefixo + "operacao <X + X>",
+          value: "Faz uma operação. É possível somar, subtrair, dividir e multiplicar usando: (+)(-)(/)(*)",
+          inline: false,
+        },
       )
       .setTimestamp()
       .setFooter("BotRabelin", logo);
