@@ -66,6 +66,11 @@ module.exports = {
           value: "Faz uma operação. É possível somar, subtrair, dividir e multiplicar usando: (+)(-)(/)(*)",
           inline: false,
         },
+        {
+          name: prefixo + "link",
+          value: "Envia o link da página estática",
+          inline: false,
+        },
       )
       .setTimestamp()
       .setFooter("BotRabelin", logo);

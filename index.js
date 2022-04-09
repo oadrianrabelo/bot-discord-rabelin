@@ -93,6 +93,8 @@ client.on("message", (message) => {
             client.commands.get("serverinfo").execute(message, args);
         } else if (command === "status") {
             client.commands.get("status").execute(message, args, client);
+        } else if (command === "link") {
+            client.commands.get("link").execute(message, args);
         }
     } catch (error) {
         console.log(error);
