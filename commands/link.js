@@ -3,7 +3,7 @@ module.exports ={
   description: "command that send the static webpage link",
   execute(message) {
     message.reply(
-      `o link para a página estática é :https://BotRabelin.adrianrabelo.repl.co`
+      `o link para a página estática é : https://bot-discord-rabelin.adrianrabelo.repl.co`
     );
   },
 };

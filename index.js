@@ -4,6 +4,7 @@ const port = 3000;
 
 const path = require('path');
 
+// app.get('/', (req, res) => res.send('Rodou'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './home-page/index.html')));
 
 app.listen(port, () => console.log(`App is listening at http://localhost:${port}`));
