@@ -9,15 +9,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Adrian-Rabelo/bot-discord-rabelin.git"
+        "url": "git+https://github.com/oadrianrabelo/bot-discord-rabelin.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Adrian-Rabelo/bot-discord-rabelin/issues"
+        "url": "https://github.com/oadrianrabelo/bot-discord-rabelin/issues"
     },
-    "homepage": "https://github.com/Adrian-Rabelo/bot-discord-rabelin#readme",
+    "homepage": "https://github.com/oadrianrabelo/bot-discord-rabelin#readme",
     "dependencies": {
         "@discordjs/opus": "^0.5.0",
         "discord-tts": "^1.0.3",
@@ -28,6 +28,6 @@
         "nodemon": "^2.0.9",
         "opus": "^0.0.0",
         "yt-search": "^2.7.5",
-        "ytdl-core": "^4.11.0"
+        "ytdl-core": "^4.11.5"
     }
 }
