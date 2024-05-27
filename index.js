@@ -4,6 +4,13 @@ const port = 3000;
 
 const path = require('path');
 
+var http = require('http');
+
+http.createServer(function(req, res) {
+    res.write("im, alive");
+    res.end();
+}).listen(port);
+
 // app.get('/', (req, res) => res.send('Rodou'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './home-page/index.html')));
 
@@ -30,6 +37,7 @@ for (const file of commandFiles) {
 
     client.commands.set(command.name, command);
 }
+
 client.on("ready", () => {
     console.log("Tô pronto");
 
